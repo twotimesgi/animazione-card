@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(32, 32, 32);
+    font-family: 'Roboto', sans-serif;
+}
+
+.card{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: url(img/mac.jpg);
+    background-size: cover;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform ease 1s;
+}
+
+.card::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+h1{
+    margin-bottom: 20px;
+    width: 210px;
+    text-align: right;
+}
+
+p{
+    line-height: 1.5rem;
+    opacity: 0;
+    transition: opacity ease 1s;
+    transition-delay: 0.8s;
+}
+
+
+.card h1:after{
+    height: 4px;
+    background-color: rgb(45, 255, 192);
+    width: 230px;
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -230px;
+    transition: all ease 0.5s;
+}
+
+.content{
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    bottom: -135px;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0,0,0,0.8) 50%, rgba(0, 0, 0, 0) 100%);
+    transition: bottom ease 1s;
+    transition-delay: 0.5s;
+}
+
+.card:hover .content{
+    bottom: 0px;
+}
+
+.card:hover h1:after{
+    left: 0px;
+}
+
+.card:hover{
+    transform: translate(-50%,-50%) scale(110%);
+}
+
+
+.card:hover p{ 
+    opacity: .8;    
+}
