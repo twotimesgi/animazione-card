@@ -34,9 +34,11 @@ body{
 
 h1{
     margin-bottom: 20px;
-    width: 100%;
+    width: fit-content;
     text-align: left;
     font-weight: 200;
+    position: relative;
+    overflow: visible;
 }
 
 p{
@@ -54,11 +56,11 @@ p{
 .card h1:after{
     height: 5px;
     background-color: rgb(45, 255, 192);
-    width: 240px;
+    width: calc(100% + 20px);
     content: "";
     position: absolute;
-    top: 65px;
-    left: -240px;
+    top: 45px;
+    left: calc(-100% - 40px);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 0.9);
 }
 
@@ -78,7 +80,7 @@ p{
 }
 
 .card:hover h1:after{
-    left: 0px;
+    left: -20px;
 }
 
 .card:hover{
@@ -99,6 +101,7 @@ p{
     padding: 1rem;
     background-color: rgb(0, 184, 129);;
     border-radius: 15px;
+    font-size: 0.8rem;
 }
 
 
